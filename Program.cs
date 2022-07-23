@@ -1,16 +1,7 @@
-﻿//! In order to stop the shutdown countdown you need to use CTRL + C;
+//! In order to stop the shutdown countdown you need to use CTRL + C;
 using System;
 using System.Diagnostics;
 using System.Media;
-
-[DllImport("kernel32.dll")]
-static extern IntPtr GetConsoleWindow();
-
-[DllImport("user32.dll")]
-static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-const int SW_HIDE = 0;
-const int SW_SHOW = 5;
 
 public class Program
 {
@@ -39,9 +30,6 @@ public class Program
     }
 
     public static void infLoop(int time) {
-        //* Console's Window reference
-        var handle = GetConsoleWindow();
-        ShowWindow(handle, SW_HIDE);
 
         //* Waiting till next shutdown attempt
         System.Threading.Thread.Sleep(time * 60000);
@@ -58,7 +46,6 @@ public class Program
             Console.WriteLine("Are you still here?");
             Console.WriteLine(i);
             System.Threading.Thread.Sleep(1000);
-            ShowWindow(handle, SW_SHOW);
         }
         Process.Start(psi);
     }

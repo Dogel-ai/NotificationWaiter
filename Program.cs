@@ -20,7 +20,7 @@ public class Program
         bool success = int.TryParse(Console.ReadLine(), out int time);
         if(success) {
             Console.Clear();
-            Console.WriteLine("Time waiting:" + time + "minute(s)");
+            Console.WriteLine($"Time waiting: {time} minute(s)");
             return time;
         } else {
             Console.Clear();

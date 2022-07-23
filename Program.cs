@@ -30,7 +30,6 @@ public class Program
     }
 
     public static void infLoop(int time) {
-
         //* Waiting till next shutdown attempt
         System.Threading.Thread.Sleep(time * 60000);
 
@@ -43,7 +42,7 @@ public class Program
         for(int i = 0; i <= 120; i++) {
             SystemSounds.Beep.Play();
             Console.Clear();
-            Console.WriteLine("Are you still here?");
+            Console.WriteLine("Countdown complete.\nAre you still here?");
             Console.WriteLine(i);
             System.Threading.Thread.Sleep(1000);
         }
